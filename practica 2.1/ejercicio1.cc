@@ -13,6 +13,9 @@ int main(int argc, char **argv)
 
   memset(&hints, 0, sizeof(struct addrinfo));
 
+  //AF_UNSPEC -> OPCIÓN QUE PERMITE OBTENER TODAS LAS FAMILIAS
+  hints.ai_family = AF_UNSPEC;
+
   int rc = getaddrinfo(argv[1], nullptr , &hints, &res);
 
   if ( rc != 0 )
